@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+/* font-family: 'Raleway', sans-serif; */
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani&display=swap');
+/* font-family: 'Rajdhani', sans-serif; */
+
+
+:root {
+    --black: #212121;
+    --medium-dark: #669bbc;
+    --medium: #d88373;
+    --medium-light: #6ba292;
+    --light: #f5e2c8;
+}
+
+* {
+    box-sizing: border-box;
+    font-size: 62.5%;    
+}
+
+body {
+    background-color: var(--black);
+    color: var(--light);    
+    font-family: 'Rajdhani', sans-serif;    
+}
+
+.container {
+    display: block;
+    margin-inline: auto;
+    text-align: center;
+    font-size: 3.4rem;
+    max-width: 50rem;
+}
+
+.container h1 {
+    font-size: 4rem;
+    margin: 3rem 1rem;
+}
+
+.container .instructions {
+    min-height: 20rem;
+    margin: 0 3rem 3rem 3rem;
+    text-align: center;
+}
+
+.container a {
+    display: block;
+    max-width: 20rem;
+    margin: 1rem auto;
+    transition: all ease-in-out .25s;
+}
+
+.container a:hover {
+    transform: scale(1.1);
+}
+
+.start-button {
+    font-size: 2rem;
+    font-weight: bold;
+    text-decoration: none;
+    border: 1px solid var(--medium);
+    border-radius: 4px;
+    padding: 5px 10px;
+    background-color: var(--medium);
+    color: var(--black);
+}
+
+.view-highscores {
+    font-size: 2rem;
+    font-weight: bold;
+    text-decoration: none;
+    border: 1px solid var(--medium-light);
+    border-radius: 4px;
+    padding: 5px 10px;
+    background-color: var(--medium-light);
+    color: var(--black);
+}
