@@ -12,7 +12,7 @@
   <body>
     <main>
       <section class="container">
-        <h1>Coding Quiz Challenge</h1>
+        <h1 id="index-header">Coding Quiz Challenge</h1>
         <p class="instructions">
           Try to answer the following code-related questions within the time
           limit. Keep in mind that incorrect answers will penalize your
@@ -20,14 +20,35 @@
         </p>
 
         <div>
-          <a id="button" class="start-button" href="./quiz.html">Start Quiz</a>
+          <a id="button" class="start-button">Start Quiz</a>
         </div>
 
         <div>
-          <a class="view-highscores" href="./highscores.html">View Highscores</a>
+          <a class="view-highscores">View Highscores</a>
         </div>
+
+        <!-- Quiz -->
+        <h2 class="time">Time: <span id="timer">60</span></h2>
+
+        <h1 id="question"></h1>
+
+        <div class="multiple-choice">
+          <ul id="choice-list">
+            <li id="choice1" data-number="1"></li>
+            <li id="choice2" data-number="2"></li>
+            <li id="choice3" data-number="3"></li>
+            <li id="choice4" data-number="4"></li>
+          </ul>
+        </div>
+
+        <div id="lose-text"></div>
+        <div id="win-game"></div>
+
+        <!-- Highscores -->
+        <div id="highscore-title"></div>
       </section>
     </main>
 
+    <script src="./assets/script.js"></script>
   </body>
 </html>
