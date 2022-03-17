@@ -4,12 +4,12 @@
 
 ## Description
 
-<!-- <ul>
-    <li>For this project my goal was to create a random password generator.</li>
-    <li>The UI provides a clean, and fun user experience.</li>
-    <li>This was my first project to feature Javascript. The hardest part for me was knowing where to start.
-        Once I got started, everything began to make sense and was easier for me to visualize the how the code works.</li>
-</ul> -->
+<ul>
+    <li>For this project my goal was to create a quiz that dynamically updated using vanilla JavaScript.</li>
+    <li>The UI provides a clean, and simple user experience.</li>
+    <li>This project was pretty intense, but great practice!</li>
+    <li>After completing this project, I feel very confident in my ablility to work with JavaScript in the future.</li>
+</ul>
 
 ---
 
@@ -30,7 +30,7 @@ https://mahiv87.github.io/Javascript-Quiz/
 
 ## Mock-up
 
-![Screenshot of S-A-P-G]()
+![GIF of Coding Quiz](./assets/images/screenshot.gif)
 
 
 ---

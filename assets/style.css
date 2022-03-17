@@ -1,182 +1,180 @@
-@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Raleway&display=swap");
 /* font-family: 'Raleway', sans-serif; */
-@import url('https://fonts.googleapis.com/css2?family=Rajdhani&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Rajdhani&display=swap");
 /* font-family: 'Rajdhani', sans-serif; */
 
-
 :root {
-    --black: #212121;
-    --medium-dark: #669bbc;
-    --medium: #d88373;
-    --medium-light: #6ba292;
-    --light: #f5e2c8;
+  --black: #212121;
+  --medium-dark: #669bbc;
+  --medium: #d88373;
+  --medium-light: #6ba292;
+  --light: #f5e2c8;
 }
 
 * {
-    box-sizing: border-box;
-    font-size: 62.5%;    
+  box-sizing: border-box;
+  font-size: 62.5%;
 }
 
 body {
-    background-color: var(--black);
-    color: var(--light);    
-    font-family: 'Rajdhani', sans-serif;    
+  background-color: var(--black);
+  color: var(--light);
+  font-family: "Rajdhani", sans-serif;
 }
 
 .container {
-    display: block;
-    margin-inline: auto;
-    text-align: center;
-    font-size: 3.4rem;
-    max-width: 50rem;
+  display: block;
+  margin-inline: auto;
+  text-align: center;
+  font-size: 3.4rem;
+  max-width: 50rem;
 }
 
 .container h1 {
-    font-size: 4rem;
-    margin: 3rem 1rem;
+  font-size: 4rem;
+  margin: 3rem 1rem;
 }
 
 .container .instructions {
-    min-height: 20rem;
-    margin: 0 3rem 3rem 3rem;
-    text-align: center;
+  min-height: 20rem;
+  margin: 0 3rem 3rem 3rem;
+  text-align: center;
 }
 
 .container a {
-    display: block;
-    max-width: 20rem;
-    margin: 1rem auto;
-    transition: all ease-in-out .25s;
+  cursor: pointer;
+  display: block;
+  max-width: 20rem;
+  margin: 1rem auto;
+  transition: all ease-in-out 0.25s;
 }
 
 .container a:hover {
-    transform: scale(1.1);
+  transform: scale(1.1);
 }
 
 .start-button {
-    font-size: 2rem;
-    font-weight: bold;
-    text-decoration: none;
-    border: 1px solid var(--medium);
-    border-radius: 4px;
-    padding: 5px 10px;
-    background-color: var(--medium);
-    color: var(--black);
+  font-size: 2rem;
+  font-weight: bold;
+  text-decoration: none;
+  border: 1px solid var(--medium);
+  border-radius: 4px;
+  padding: 5px 10px;
+  background-color: var(--medium);
+  color: var(--black);
 }
 
 .view-highscores {
-    font-size: 2rem;
-    font-weight: bold;
-    text-decoration: none;
-    border: 1px solid var(--medium-light);
-    border-radius: 4px;
-    padding: 5px 10px;
-    background-color: var(--medium-light);
-    color: var(--black);
+  font-size: 2rem;
+  font-weight: bold;
+  text-decoration: none;
+  border: 1px solid var(--medium-light);
+  border-radius: 4px;
+  padding: 5px 10px;
+  background-color: var(--medium-light);
+  color: var(--black);
 }
 
 /* Quiz styling */
 
 .time {
-    font-size: 2.2rem;
-    margin: 1.2rem;
-    text-align: center;
+  font-size: 2.2rem;
+  margin: 1.2rem;
+  text-align: center;
 }
 
 #timer {
-    font-size: 2.2rem;
+  font-size: 2.2rem;
 }
 
 #choice-list {
-    list-style: upper-alpha;
-    padding: 0;
+  list-style: upper-alpha;
+  padding: 0;
 }
 
-.multiple-choice li{
-    cursor: pointer;
-    width: max(80%, 30rem);
-    font-size: 2rem;
-    background-color: rgba(102, 155, 188, .3);
-    border-radius: 4px;
-    text-align: start;
-    margin: 1rem auto;
-    padding: 1rem;
-    transition: all ease-in-out .25s;
+.multiple-choice li {
+  cursor: pointer;
+  width: max(80%, 30rem);
+  font-size: 2rem;
+  background-color: rgba(102, 155, 188, 0.3);
+  border-radius: 4px;
+  text-align: start;
+  margin: 1rem auto;
+  padding: 1rem;
+  transition: all ease-in-out 0.25s;
 }
 
 .multiple-choice li:hover {
-    transform: scale(1.1);
+  transform: scale(1.1);
 }
 
 .submit-button {
-    cursor: pointer;
-    transition: all ease-in-out .25s;
+  cursor: pointer;
+  transition: all ease-in-out 0.25s;
 }
 
 .submit-button:hover {
-    transform: scale(1.1);
+  transform: scale(1.1);
 }
 
 #lose-text {
-    font-size: 4.25rem;
-    color: var(--medium);
+  font-size: 4.25rem;
+  color: var(--medium);
 }
-
 
 /* Highscores styling */
 
 .ordered-list {
-    display: block;
-    background-color: rgba(102, 155, 188, .3);
-    border-radius: 4px;
-    font-size: 3rem;
-    text-align: left;
-    margin: 1rem;
-    /* padding-inline: 1rem; */
+  display: block;
+  background-color: rgba(102, 155, 188, 0.3);
+  border-radius: 4px;
+  font-size: 3rem;
+  text-align: left;
+  margin: 1rem;
 }
 
-#button {  
-    display: block;
-    max-width: 20rem;
-    margin: 1rem auto;
-    transition: all ease-in-out .25s;    
+#button {
+  display: block;
+  max-width: 20rem;
+  margin: 1rem auto;
+  transition: all ease-in-out 0.25s;
 }
 
 #button:hover {
-    transform: scale(1.1);
+  transform: scale(1.1);
 }
 
 .go-back {
-    font-size: 2rem;
-    font-weight: bold;
-    text-decoration: none;
-    border: 1px solid var(--medium);
-    border-radius: 4px;
-    padding: 5px 10px;
-    background-color: var(--medium);
-    color: var(--black);
+  font-size: 2rem;
+  font-weight: bold;
+  text-decoration: none;
+  border: 1px solid var(--medium);
+  border-radius: 4px;
+  padding: 5px 10px;
+  background-color: var(--medium);
+  color: var(--black);
 }
 
 .clear-highscores {
-    cursor: pointer;
-    font-size: 2rem;
-    font-weight: bold;
-    text-decoration: none;
-    border: 1px solid var(--medium-light);
-    border-radius: 4px;
-    padding: 5px 10px;
-    background-color: var(--medium-light);
-    color: var(--black);
+  cursor: pointer;
+  font-size: 2rem;
+  font-weight: bold;
+  text-decoration: none;
+  border: 1px solid var(--medium-light);
+  border-radius: 4px;
+  padding: 5px 10px;
+  background-color: var(--medium-light);
+  color: var(--black);
 }
 
 @media screen and (min-width: 768px) {
-    .inline-flex {
-        display: flex;
-        justify-content: space-between;
-        align-items: baseline;
-    }
+  .inline-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
 
-    .inline-flex #button {
-        min-width: 20rem;
-    }
+  .inline-flex #button {
+    min-width: 20rem;
+  }
 }
