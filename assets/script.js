@@ -1,3 +1,4 @@
+// Global variables
 var indexHeader = document.querySelector("#index-header");
 var indexText = document.querySelector(".instructions");
 var startButton = document.querySelector(".start-button");
@@ -20,8 +21,10 @@ var chooseAnswer = true;
 var timer;
 var timerCount;
 
+// This array will hold scores for local storage 
 var scoreList = [];
 
+// This variable is and array of objects that hold the questions 
 var questions = [
   {
     question: "JavaScript is a ___-side programming language.",
@@ -66,9 +69,11 @@ var questions = [
   },
 ];
 
+// Hides quiz elements when at index page
 choiceList.setAttribute("style", "display: none");
 timeElement.setAttribute("style", "display: none");
 
+// When Start Quiz button is clicked, hides index page elements and displays quiz elements
 function startQuiz() {
   choiceList.setAttribute("style", "display: block");
   timeElement.setAttribute("style", "display: block");
@@ -77,14 +82,14 @@ function startQuiz() {
   startButton.setAttribute("style", "display: none");
   scoreButton.setAttribute("style", "display: none");
 
-  function startGame() {
-    isWin = false;
-    timerCount = 60;
-    questionAmount = [...questions];
-    renderQuestion();
-    startTimer();
-  }
+  // Initial values, and starts timer and questions
+  isWin = false;
+  timerCount = 60;
+  questionAmount = [...questions];
+  renderQuestion();
+  startTimer();
 
+// This function chooses which question and choices to display
   function renderQuestion() {
     var questionIndex = Math.floor(Math.random() * questionAmount.length);
     chosenQuestion = questionAmount[questionIndex];
@@ -100,11 +105,13 @@ function startQuiz() {
     chooseAnswer = true;
   }
 
+  // Event listener for each choice 
   choice1.addEventListener("click", function (event) {
     chooseAnswer = false;
     var selection = event.target;
     var chosenAnswer = selection.dataset["number"];
 
+    // Conditional that styles the selected choice with green or red border
     if (chosenAnswer == chosenQuestion.answer) {
       choice1.setAttribute("style", "border: 1px solid green");
     } else {
@@ -112,6 +119,8 @@ function startQuiz() {
       timerCount -= 10;
     }
 
+    // One second delay to allow user to view selection.
+    // And renders next question unless there are none available
     setTimeout(function delay() {
       choice1.removeAttribute("style", "border:");
       if (questionAmount.length > 0) {
@@ -188,6 +197,7 @@ function startQuiz() {
     }, 1000);
   });
 
+  // Starts timer. And determines which result page to display 
   function startTimer() {
     timer = setInterval(function () {
       timerCount--;
@@ -205,7 +215,8 @@ function startQuiz() {
       }
     }, 1000);
   }
-
+  
+  // If conditional is met winGame fires to display input for user initials
   function winGame() {
     questionElement.setAttribute("style", "display: none;");
     choiceList.setAttribute("style", "display: none;");
@@ -262,6 +273,7 @@ function startQuiz() {
     });
   }
 
+  // If conditional is met loseGame fires to display button to return to main menu 
   function loseGame() {
     questionElement.setAttribute("style", "display: none;");
     choiceList.setAttribute("style", "display: none;");
@@ -289,9 +301,10 @@ function startQuiz() {
     loseElement.appendChild(restartGame);
   }
 
-  startGame();
+
 }
 
+// This function will display the scores pulled from local storage
 function highscoreList() {
   indexHeader.setAttribute("style", "display: none");
   indexText.setAttribute("style", "display: none");
@@ -343,6 +356,7 @@ function highscoreList() {
     }
   }
 
+  // This event listener clears rendered scores and local storage
   clearScores.addEventListener("click", function () {
     highscoreList.textContent = "";
     localStorage.clear();
@@ -351,6 +365,7 @@ function highscoreList() {
   renderScore();
 }
 
+// This function pulls scores stored in local storage 
 function init() {
   var storedScores = JSON.parse(localStorage.getItem("score"));
 
@@ -361,5 +376,6 @@ function init() {
 
 init();
 
+// Index event listener 
 startButton.addEventListener("click", startQuiz);
 scoreButton.addEventListener("click", highscoreList);

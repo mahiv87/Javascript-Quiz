@@ -11,6 +11,8 @@
   --light: #f5e2c8;
 }
 
+/* Main Styling */
+
 * {
   box-sizing: border-box;
   font-size: 62.5%;
@@ -166,6 +168,8 @@ body {
   background-color: var(--medium-light);
   color: var(--black);
 }
+
+/* Media Queries */
 
 @media screen and (min-width: 768px) {
   .inline-flex {
