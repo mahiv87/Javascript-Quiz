@@ -69,6 +69,8 @@ var questions = [
   },
 ];
 
+var choice = [choice1, choice2, choice3, choice4];
+
 // Hides quiz elements when at index page
 choiceList.setAttribute("style", "display: none");
 timeElement.setAttribute("style", "display: none");
@@ -105,24 +107,26 @@ function startQuiz() {
     chooseAnswer = true;
   }
 
-  // Event listener for each choice 
-  choice1.addEventListener("click", function (event) {
+  // forEach loop that determines if selected answer is correct/incorrect.
+  choice.forEach(choices => {
+    // Event listener for the user selection
+  choices.addEventListener("click", function (event) {
     chooseAnswer = false;
     var selection = event.target;
     var chosenAnswer = selection.dataset["number"];
 
     // Conditional that styles the selected choice with green or red border
     if (chosenAnswer == chosenQuestion.answer) {
-      choice1.setAttribute("style", "border: 1px solid green");
+      choices.setAttribute("style", "border: 1px solid green");
     } else {
-      choice1.setAttribute("style", "border: 1px solid red");
+      choices.setAttribute("style", "border: 1px solid red");
       timerCount -= 10;
     }
 
     // One second delay to allow user to view selection.
     // And renders next question unless there are none available
     setTimeout(function delay() {
-      choice1.removeAttribute("style", "border:");
+      choices.removeAttribute("style", "border:");
       if (questionAmount.length > 0) {
         renderQuestion();
       } else if (questionAmount.length === 0) {
@@ -130,72 +134,7 @@ function startQuiz() {
       }
     }, 1000);
   });
-
-  choice2.addEventListener("click", function (event) {
-    chooseAnswer = false;
-    var selection = event.target;
-    var chosenAnswer = selection.dataset["number"];
-
-    if (chosenAnswer == chosenQuestion.answer) {
-      choice2.setAttribute("style", "border: 1px solid green");
-    } else {
-      choice2.setAttribute("style", "border: 1px solid red");
-      timerCount -= 10;
-    }
-
-    setTimeout(function delay() {
-      choice2.removeAttribute("style", "border:");
-      if (questionAmount.length > 0) {
-        renderQuestion();
-      } else if (questionAmount.length === 0) {
-        isWin = true;
-      }
-    }, 1000);
-  });
-
-  choice3.addEventListener("click", function (event) {
-    chooseAnswer = false;
-    var selection = event.target;
-    var chosenAnswer = selection.dataset["number"];
-
-    if (chosenAnswer == chosenQuestion.answer) {
-      choice3.setAttribute("style", "border: 1px solid green");
-    } else {
-      choice3.setAttribute("style", "border: 1px solid red");
-      timerCount -= 10;
-    }
-
-    setTimeout(function delay() {
-      choice3.removeAttribute("style", "border:");
-      if (questionAmount.length > 0) {
-        renderQuestion();
-      } else if (questionAmount.length === 0) {
-        isWin = true;
-      }
-    }, 1000);
-  });
-
-  choice4.addEventListener("click", function (event) {
-    chooseAnswer = false;
-    var selection = event.target;
-    var chosenAnswer = selection.dataset["number"];
-
-    if (chosenAnswer == chosenQuestion.answer) {
-      choice4.setAttribute("style", "border: 1px solid green");
-    } else {
-      choice4.setAttribute("style", "border: 1px solid red");
-      timerCount -= 10;
-    }
-
-    setTimeout(function delay() {
-      choice4.removeAttribute("style", "border:");
-      if (questionAmount.length > 0) {
-        renderQuestion();
-      } else if (questionAmount.length === 0) {
-        isWin = true;
-      }
-    }, 1000);
-  });
+  })  
 
   // Starts timer. And determines which result page to display 
   function startTimer() {
